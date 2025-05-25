@@ -1,10 +1,24 @@
 class Solution {
     public int climbStairs(int n) {
-        
+        //n=3  1,1,1,1,2
+        //[0,1,1,2]
+        if(n<=1) return 1;
+        if(n==2) return 2;
         int[] dp = new int[n+1];
-        Arrays.fill(dp,-1);
+        dp[0] = 1;
+        dp[1] = 1;
 
-        return ways(n,dp);
+
+        for(int i=2; i<=n; i++){
+            dp[i] = dp[i-1] + dp[i-2];
+
+        }
+
+
+        
+       // Arrays.fill(dp,-1);
+
+        return dp[n];
     }
 
     int ways(int n, int[] dp){
