@@ -18,8 +18,8 @@ class Solution {
 
        ListNode nextNode = midNode.next;
        midNode.next = null;
-       ListNode leftNode = sortList(head);
-       ListNode rightNode = sortList(nextNode);
+       ListNode leftNode = sortList(nextNode);
+       ListNode rightNode = sortList(head);
 
         return mergeLinkedList(leftNode,rightNode);
     }
